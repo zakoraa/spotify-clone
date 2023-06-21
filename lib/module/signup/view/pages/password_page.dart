@@ -1,18 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-// import 'package:spotify/authentication/auth_controller.dart';
 import 'package:spotify/routes/route_name.dart';
 
-class Page2 extends StatefulWidget {
+class Page2 extends StatelessWidget {
   const Page2({super.key});
-
-  @override
-  State<Page2> createState() => _Page2State();
-}
-
-class _Page2State extends State<Page2> {
-  // AuthController controller = Get.find<AuthController>();
-
 
   @override
   Widget build(BuildContext context) {
@@ -74,7 +65,6 @@ class _Page2State extends State<Page2> {
                         height: 3,
                       ),
                       TextField(
-                        // controller: controller.passwordController,
                         cursorColor: Colors.white,
                         cursorHeight: 16,
                         style:
@@ -121,8 +111,6 @@ class _Page2State extends State<Page2> {
                               borderRadius: BorderRadius.circular(20),
                               splashColor: Colors.transparent,
                               onTap: () {
-                               
-                                // controller.addData(controller.passwordController.text,context,RouteName.username_signUp);
                               },
                               child: const Center(
                                 child: Text(
@@ -144,6 +132,4 @@ class _Page2State extends State<Page2> {
       ),
     );
   }
-
-  
 }

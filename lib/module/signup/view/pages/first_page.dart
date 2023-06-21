@@ -3,50 +3,10 @@ import 'package:get/get.dart';
 
 import 'package:spotify/routes/route_name.dart';
 
-class FirstPage extends StatefulWidget {
+import '../../widget/continue_with.dart';
+
+class FirstPage extends StatelessWidget {
   const FirstPage({super.key});
-
-  @override
-  State<FirstPage> createState() => _FirstPageState();
-}
-
-class _FirstPageState extends State<FirstPage> {
-  Widget _socialMedia(String txt, String logo, {double? wdth}) {
-    return Container(
-      width: 300,
-      height: 45,
-      decoration: BoxDecoration(
-          border: Border.all(color: Colors.white, width: 1),
-          borderRadius: BorderRadius.circular(45)),
-      child: Material(
-        borderRadius: BorderRadius.circular(45),
-        elevation: 0.0,
-        color: Colors.transparent,
-        child: InkWell(
-          splashColor: Colors.transparent,
-          borderRadius: BorderRadius.circular(45),
-          onTap: () {},
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.start,
-            children: [
-              SizedBox(
-                width: (wdth == null) ? 15 : 20,
-              ),
-              Image.asset(logo),
-              const SizedBox(
-                width: 50,
-              ),
-              Text(
-                txt,
-                style: const TextStyle(
-                    color: Colors.white, fontWeight: FontWeight.bold),
-              ),
-            ],
-          ),
-        ),
-      ),
-    );
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -133,17 +93,22 @@ class _FirstPageState extends State<FirstPage> {
                   const SizedBox(
                     height: 10,
                   ),
-                  _socialMedia(
-                      "Continue with Google", "assets/Component 37.png"),
+                  const ContinueWith(
+                      text: "Continue with Google",
+                      logo: "assets/Component 37.png"),
                   const SizedBox(
                     height: 10,
                   ),
-                  _socialMedia("Continue with Facebook", "assets/facebook.png"),
+                  const ContinueWith(
+                      text: "Continue with Facebook",
+                      logo: "assets/facebook.png"),
                   const SizedBox(
                     height: 10,
                   ),
-                  _socialMedia("Continue with Apple", "assets/Vector.png",
-                      wdth: 20),
+                  const ContinueWith(
+                      text: "Continue with Apple",
+                      logo: "assets/Vector.png",
+                      width: 20),
                   const SizedBox(
                     height: 10,
                   ),

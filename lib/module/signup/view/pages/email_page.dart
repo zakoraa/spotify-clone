@@ -1,17 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-// import 'package:spotify/authentication/auth_controller.dart';
-import '../../../../routes/route_name.dart';
 
-class Page1 extends StatefulWidget {
+class Page1 extends StatelessWidget {
   const Page1({super.key});
 
-  @override
-  State<Page1> createState() => _Page1State();
-}
-
-class _Page1State extends State<Page1> {
-  // AuthController controller = Get.put(AuthController());
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -74,7 +66,6 @@ class _Page1State extends State<Page1> {
                       SizedBox(
                         width: MediaQuery.of(context).size.width,
                         child: TextField(
-                          // controller: controller.emailController,
                           cursorColor: Colors.white,
                           cursorHeight: 16,
                           style: const TextStyle(
@@ -121,10 +112,7 @@ class _Page1State extends State<Page1> {
                             child: InkWell(
                               borderRadius: BorderRadius.circular(20),
                               splashColor: Colors.transparent,
-                              onTap: () {
-                                
-                                // controller.addData(controller.emailController.text,context,RouteName.password_signUp);
-                              },
+                              onTap: () {},
                               child: const Center(
                                 child: Text(
                                   "Next",
@@ -145,6 +133,4 @@ class _Page1State extends State<Page1> {
       ),
     );
   }
-
- 
 }

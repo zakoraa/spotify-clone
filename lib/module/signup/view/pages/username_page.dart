@@ -1,16 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-// import 'package:spotify/authentication/auth_controller.dart';
+import '../../widget/text_widget.dart';
 
-class Page3 extends StatefulWidget {
+class Page3 extends StatelessWidget {
   const Page3({super.key});
-
-  @override
-  State<Page3> createState() => _Page3State();
-}
-
-class _Page3State extends State<Page3> {
-  // AuthController controller = Get.find<AuthController>();
 
   @override
   Widget build(BuildContext context) {
@@ -41,7 +34,10 @@ class _Page3State extends State<Page3> {
                           ),
                         ),
                       ),
-                      _text("Create account", 16, weight: FontWeight.bold),
+                      const TextWidget(
+                          text: "Create account",
+                          size: 16,
+                          weight: FontWeight.bold),
                       const SizedBox(
                         width: 30,
                       )
@@ -56,12 +52,14 @@ class _Page3State extends State<Page3> {
                       mainAxisAlignment: MainAxisAlignment.start,
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        _text("What's your name?", 25, weight: FontWeight.bold),
+                        const TextWidget(
+                            text: "What's your name?",
+                            size: 25,
+                            weight: FontWeight.bold),
                         const SizedBox(
                           height: 3,
                         ),
                         TextField(
-                          // controller: controller.nameController,
                           cursorColor: Colors.white,
                           cursorHeight: 16,
                           style: const TextStyle(
@@ -85,8 +83,9 @@ class _Page3State extends State<Page3> {
                         ),
                         Container(
                             margin: const EdgeInsets.fromLTRB(15, 0, 15, 0),
-                            child: _text(
-                                "This appears on your spotify profile", 12)),
+                            child: const TextWidget(
+                                text: "This appears on your spotify profile",
+                                size: 12)),
                         const SizedBox(
                           height: 30,
                         ),
@@ -105,16 +104,19 @@ class _Page3State extends State<Page3> {
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              _text(
-                                  "By tapping on “Create account”, you agree to the spotify Terms of Use. ",
-                                  12),
+                              const TextWidget(
+                                  text:
+                                      "By tapping on “Create account”, you agree to the spotify Terms of Use. ",
+                                  size: 12),
                               const SizedBox(
                                 height: 20,
                               ),
                               InkWell(
                                   splashColor: Colors.transparent,
                                   onTap: () {},
-                                  child: _text("Terms of Use", 12,
+                                  child: const TextWidget(
+                                      text: "Terms of Use",
+                                      size: 12,
                                       color: 0xFF1ED760)),
                               const SizedBox(
                                 height: 20,
@@ -122,14 +124,17 @@ class _Page3State extends State<Page3> {
                               InkWell(
                                   splashColor: Colors.transparent,
                                   onTap: () {},
-                                  child: _text("Privacy Policy", 12,
+                                  child: const TextWidget(
+                                      text: "Privacy Policy",
+                                      size: 12,
                                       color: 0xFF1ED760)),
                               const SizedBox(
                                 height: 20,
                               ),
-                              _text(
-                                  "To learn more about how Spotify collect, uses, shares and protects your personal data, Please see the Spotify Privacy Policy.",
-                                  12)
+                              const TextWidget(
+                                  text:
+                                      "To learn more about how Spotify collect, uses, shares and protects your personal data, Please see the Spotify Privacy Policy.",
+                                  size: 12)
                             ],
                           ),
                         ),
@@ -147,8 +152,7 @@ class _Page3State extends State<Page3> {
                               child: InkWell(
                                 borderRadius: BorderRadius.circular(20),
                                 splashColor: Colors.transparent,
-
-                                //  controller.addDataToFirebase(context, RouteName.favoriteSinger_signUp);                                },
+                                onTap: () {},
                                 child: const Center(
                                   child: Text(
                                     "Create an account",
@@ -170,16 +174,6 @@ class _Page3State extends State<Page3> {
           ),
         ),
       ),
-    );
-  }
-
-  Widget _text(String txt, double? size, {FontWeight? weight, dynamic color}) {
-    return Text(
-      txt,
-      style: TextStyle(
-          fontWeight: weight,
-          color: (color == null) ? Colors.white : Color(color),
-          fontSize: size),
     );
   }
 }
