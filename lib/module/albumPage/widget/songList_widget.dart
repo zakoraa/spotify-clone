@@ -75,10 +75,7 @@ class SongListWidget extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           SizedBox(
-                            width: (favoriteController.favoriteSong
-                                    .contains(song_list![index].song_title))
-                                ? 230
-                                : 270,
+                            width: Get.width * 0.5,
                             child: Text(
                               "${song_list![index].song_title}",
                               overflow: TextOverflow.ellipsis,
@@ -99,9 +96,6 @@ class SongListWidget extends StatelessWidget {
                                 color: Color.fromARGB(255, 175, 172, 172),
                                 fontSize: 13),
                           ),
-                          const SizedBox(
-                            width: 50.0,
-                          ),
                         ],
                       ),
                     ],
@@ -112,7 +106,7 @@ class SongListWidget extends StatelessWidget {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          GestureDetector(
+                          Obx(() => GestureDetector(
                               onTap: () {},
                               child: (favoriteController.favoriteSong
                                       .contains(song_list![index].song_title)
@@ -123,7 +117,7 @@ class SongListWidget extends StatelessWidget {
                                         size: 25,
                                       ),
                                     )
-                                  : const SizedBox.shrink())),
+                                  : const SizedBox.shrink()))),
                           const SizedBox(
                             width: 20.0,
                           ),

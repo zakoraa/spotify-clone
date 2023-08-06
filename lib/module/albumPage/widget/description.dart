@@ -15,7 +15,7 @@ class Description extends StatelessWidget {
       required this.artist,
       required this.album_img,
       required this.album_year});
-  final String? title_album,profile_img,artist,album_year;
+  final String? title_album, profile_img, artist, album_year;
   final int? album_img;
 
   final favoriteController = Get.find<FavoriteController>();
@@ -106,24 +106,29 @@ class Description extends StatelessWidget {
                                   mainAxisAlignment: MainAxisAlignment.start,
                                   children: [
                                     Obx(() => GestureDetector(
-                                          onTap: () { if (!favoriteController.favoriteAlbum.contains(
-                                  title_album)) {
-                                favoriteController.addToFavoriteAlbum(title_album);
-                              } else {
-                                favoriteController.removeFromFavoriteAlbum(title_album);
-                              }},
-                                          child: (favoriteController.favoriteAlbum.contains(
-                                    title_album))
-                                              ? const Icon(
-                                                  Icons.favorite_rounded,
-                                                  color: Color.fromARGB(
-                                                      255, 0, 207, 7),
-                                                )
-                                              : const Icon(
-                                                  Icons.favorite_outline,
-                                                  color: Colors.grey,
-                                                )
-                                        )),
+                                        onTap: () {
+                                          if (!favoriteController.favoriteAlbum
+                                              .contains(title_album)) {
+                                            favoriteController
+                                                .addToFavoriteAlbum(
+                                                    title_album);
+                                          } else {
+                                            favoriteController
+                                                .removeFromFavoriteAlbum(
+                                                    title_album);
+                                          }
+                                        },
+                                        child: (favoriteController.favoriteAlbum
+                                                .contains(title_album))
+                                            ? const Icon(
+                                                Icons.favorite_rounded,
+                                                color: Color.fromARGB(
+                                                    255, 0, 207, 7),
+                                              )
+                                            : const Icon(
+                                                Icons.favorite_outline,
+                                                color: Colors.grey,
+                                              ))),
                                     const SizedBox(
                                       width: 10.0,
                                     ),
@@ -142,7 +147,7 @@ class Description extends StatelessWidget {
                     ),
                     Obx(() => FloatingActionButton(
                           splashColor: Colors.transparent,
-                          backgroundColor: const Color.fromARGB(255, 0, 207, 7),
+                          backgroundColor: const Color.fromARGB(255, 1, 188, 7),
                           onPressed: () {
                             controller.playSong();
                           },

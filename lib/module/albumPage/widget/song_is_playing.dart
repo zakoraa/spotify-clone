@@ -59,9 +59,8 @@ class SongIsPlaying extends StatelessWidget {
                               artist: artist,
                             ));
                       },
-                      child: Container(
-                        color: Colors.transparent,
-                        width: 260,
+                      child: SizedBox(
+                        width: Get.width * 0.6,
                         child: Row(
                           // mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
@@ -76,8 +75,7 @@ class SongIsPlaying extends StatelessWidget {
                               width: 10.0,
                             ),
                             SizedBox(
-                              height: Get.mediaQuery.size.height,
-                              width: 150,
+                              width: Get.width * 0.35,
                               child: Column(
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -112,8 +110,7 @@ class SongIsPlaying extends StatelessWidget {
                             onTap: () {},
                             child: const Icon(
                               Icons.playlist_add_rounded,
-                              
-                              size: 35,
+                              size: 30,
                             )),
                         const SizedBox(
                           width: 10.0,
@@ -138,12 +135,11 @@ class SongIsPlaying extends StatelessWidget {
                                 ? const Icon(
                                     Icons.favorite_sharp,
                                     color: Color.fromARGB(255, 33, 252, 40),
-                                    size: 30,
+                                    size: 25,
                                   )
                                 : const Icon(
                                     Icons.favorite_outline,
-                                    
-                                    size: 30,
+                                    size: 25,
                                   )),
                         const SizedBox(
                           width: 10.0,
@@ -155,8 +151,7 @@ class SongIsPlaying extends StatelessWidget {
                                 },
                                 child: const Icon(
                                   Icons.play_arrow,
-                                  size: 35,
-                                  
+                                  size: 30,
                                 ),
                               )
                             : GestureDetector(
@@ -165,8 +160,7 @@ class SongIsPlaying extends StatelessWidget {
                                 },
                                 child: const Icon(
                                   Icons.pause,
-                                  size: 35,
-                                  
+                                  size: 30,
                                 ),
                               ),
                         const SizedBox(
